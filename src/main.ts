@@ -10,12 +10,12 @@ async function bootstrap() {
   const app = await NestFactory.create<NestExpressApplication>(AppModule);
 
   const viewPath = path.join(__dirname, '../views');
-    app.setBaseViewsDir(viewPath);
-    app.setViewEngine('njk');
-    const nunjucksEnv = nunjucks.configure(viewPath, {
-        autoescape: true,
-        express: app,
-    });
+  app.setBaseViewsDir(viewPath);
+  app.setViewEngine('njk');
+  const nunjucksEnv = nunjucks.configure(viewPath, {
+      autoescape: true,
+      express: app,
+  });
 
   const port = 8109;
   await app.listen(port, () => {
