@@ -1,0 +1,635 @@
+/* Add here all your CSS customizations */
+.header {
+	background-color: #34445e;
+	/*background-image: linear-gradient(#34445e 100%, white 0%);*/
+	/*使用渐变是不是更好看点*/
+	background-image: linear-gradient(#34445e 10%, #485b79 90%);
+	border-bottom: 0px;
+	border-top: 0px;/* solid #EDEDED*/
+}
+
+.header .separator {
+	background-color: #394962;
+	background-image: linear-gradient(#394962 100%, #ededed);
+}
+
+.header .logo {
+	margin: 5px 0 0 15px;
+}
+
+.bodyBgd {background:url(sat.jpg) top center no-repeat; background-size:cover;}
+
+.logo {
+	font-family: 'RobotoCondensed', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #fb9337;
+	float: left;
+	font-size: 30px;
+	margin: 10px 0;
+}
+
+h1.logo span {
+	color: #ffffff;
+	font-family:"Microsoft YaHei";
+}
+
+h1.logo a {
+	color: #fb9337;
+}
+
+.logo-login {
+	font-family: 'RobotoCondensed', Arial, Helvetica, sans-serif;
+	font-weight: normal;
+	text-transform: uppercase;
+	color: #fb9337;
+	float: left;
+	font-size: 30px;
+	margin: 10px 0;
+}
+
+h1.logo-login span {
+    color: #f6eaea;
+}
+
+h1.logo-login a {
+	color: #fb9337;
+}
+
+/* Layout Base - Sidebar Right */
+.sidebar-right {
+	background: #485b79;
+}
+
+/* Layout Base - Page Header */
+.page-header {
+	border-left: 1px solid #576a85;
+}
+
+/* Layout Base - Sidebar Left */
+.sidebar-left {
+	background: #485b79;
+	/*box-shadow: -5px 0 0 #fb9337 inset;*/
+	box-shadow: -5px 0 0 #cccccc inset;
+}
+
+.sidebar-right h4 {
+	margin: 0;
+	color: #fefafa;
+	text-align: center;
+}
+
+.page-header {
+	background: #485b79;
+}
+
+.sidebar-left .sidebar-header .sidebar-toggle {
+	background-color: #485b79;
+}
+
+.sidebar-left .sidebar-header .sidebar-title {
+	color: #ffffff;
+	font-size:19px;
+}
+
+@media only screen and (min-width: 768px) {
+	html.sidebar-left-collapsed .sidebar-left .nano {
+		background: #485b79;
+		box-shadow: -5px 0 0 #cccccc inset;
+	}
+}
+
+@media only screen and (min-width: 768px) {
+	html.scroll .content-with-menu:before,
+	html.boxed .content-with-menu:before {
+		background: #485b79;
+	}
+}
+
+ul.nav-main > li > a:hover, ul.nav-main > li > a:focus {
+	background-color: #34445e;
+}
+
+ul.nav-main li .nav-children {
+	padding: 0 0;
+	background: #485b79;
+	box-shadow: 0px 0px 0px 0px;
+}
+
+ul.nav-main li .nav-children li .active{
+	background: #2e3850;
+}
+
+ul.nav-main li .nav-children li a:hover, ul.nav-main li .nav-children li a:focus {
+	background: #2e3850;/*#2c3039 #2e3850 #272e3f*/
+}
+
+ul.nav-main > li.nav-expanded > a {
+	background: #34445e;/*21262d  */
+}
+
+/*为兼容下拉框打开前、打开后的界面，选用黄色比较好*/
+.userbox .name {
+	color: #fb9337;
+	font-size: 20px;
+}
+
+.inner-menu {
+	color: #090909;
+	background: #eaedf1;;/*#1d2127*/
+	border-right: 0px solid #cccccc;
+}
+
+.inner-menu hr.separator-equ {
+	margin: 6px -35px 6px;
+}
+
+.inner-menu a,
+.inner-menu a:hover {
+	color: #0099e6;/*#c3dbf8*/
+}
+
+.inner-menu a.menu-item {
+	color: #090909;
+	margin: 0 -55px 0 -55px;
+	font-size: 15px;
+}
+
+.inner-menu a.menu-item:hover {
+	background: #fff;
+	color: #090909;
+}
+
+.inner-menu a.menu-item.active {
+	background: #fff;
+}
+
+html.fixed .inner-menu {
+	width: 200px;
+}
+
+html.fixed .inner-body {
+	border-top: 60px solid transparent;
+}
+
+/* Fix padding when fixed */
+@media only screen and (min-width: 768px) {
+
+	html.fixed .inner-menu .nano-content {
+		padding-top: 0px;
+	}
+}
+
+/* Content With Menu - Toggle */
+.inner-menu-toggle,
+.inner-menu .inner-menu-toggle-inside {
+	background: rgb(89, 99, 114);/*#485b79*/
+	color: #999;
+}
+
+.inner-menu-toggle-inside {
+	margin: -35px -35px -15px -35px;/* -35px -35px -35px -35px;*/
+}
+
+html.fixed.inner-menu-opened .inner-body,
+html.scroll.inner-menu-opened .inner-body,
+html.boxed.inner-menu-opened .inner-body {
+	margin-right: -20px;
+}
+
+html.fixed.inner-menu-opened .inner-body {
+	margin-left: 180px;
+}
+
+/*
+.sidebar-widget .widget-header {
+	background: #D9DEE4;
+}
+*/
+
+.show_list_a {
+	color: #e5eef3;
+}
+/* Sign Screens - Wrappers */
+/*.body-sign .panel-sign {
+	background: #34445e;
+}*/
+
+/* mailbox - main header */
+.mailbox .mailbox-folder .detail-header {
+	padding: 70px 40px 43px;
+}
+
+/* Notifications */
+.notification-menu .message {
+	color: #201d1d;
+}
+
+.notifications .notification-menu .view-more {
+	color: #201d1d;
+}
+
+.notifications .notification-menu .notification-title {
+	background: #989b9c;
+}
+
+.notifications .notification-menu .notification-title .label-default {
+	background-color: #D2312D;
+}
+
+.notifications .notification-menu:before,
+.notifications .notification-icon:before {
+	border-bottom-color: #989b9c;
+}
+
+.datepicker.datepicker-dark table thead tr th.dow {
+	color: #f9f7f7;
+}
+
+.datepicker.datepicker-dark table tbody tr td.day.new {
+	color: #f5a5a5;
+}
+
+
+.terminal-baseinfo {
+	margin: 5px 0;
+	padding:0px;
+	text-align: left;
+}
+
+.terminal-baseinfo ul {
+	list-style: none;
+	margin: 0px;
+	padding: 0;
+}
+
+.terminal-baseinfo li {
+	border-top: 1px solid #ddd;
+	padding: 10px 0;
+}
+
+.terminal-baseinfo h3 {
+	background-color: #eee;
+	border-radius: 2px 2px 0 0;
+	font-size: 20px;
+	font-weight: normal;
+	margin: -20px -20px 50px -20px;
+	padding: 20px;
+}
+
+
+.terminal-baseinfo .info {
+	background: #FFF;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	color: #333;
+	margin-right: 0;
+	padding: 20px;
+	position: relative;
+}
+
+.terminal-baseinfo .btn {
+	margin-top: 5px;
+}
+
+.text-padding-left {
+	padding-left: 10px;
+}
+
+.text-padding-noleft {
+	padding-left: 0px;
+}
+
+.error-log {
+	padding-top: 10px;
+}
+
+.apply-log {
+	padding-top: 10px;
+}
+th.user_id, td.user_id {
+	display: none;
+}
+
+.copybody-sign .panel-sign .panel-title-sign .title {
+	background-color: #cccccc;
+	border-radius: 5px 5px 0 0;
+	color: #FFF;
+	display: inline-block;
+	font-size: 12px;
+	font-size: 1.2rem;
+	line-height: 20px;
+	line-height: 2rem;
+	padding: 13px 12px;
+	vertical-align: bottom;
+	font-size: 11pt;
+}
+
+.login-font{
+	font-size: 17px;
+	font-family:"Microsoft YaHei";
+}
+
+.login-font-rem{
+	font-size: 13px;
+	font-family:"Microsoft YaHei";
+}
+
+.liquid-meter-wrapper .liquid-meter-selector a {
+	font-size: 15px;
+}
+
+
+.idu-select-label {
+	padding-right: 10px;
+	font-size: 15px;
+}
+
+.idu-select{
+	width:220px;
+}
+
+.idu-baseInfo-row{
+	margin-bottom: 15px;
+}
+
+
+
+/*
+设备状态
+*/
+.equip-state{
+	border: 5px solid red;
+	border-radius: 100px;
+	display: block;
+	float: left;
+	margin-top: 5px;
+	margin-right: 6px;
+}
+.equip-state.success {
+	border-color: #9AE14F;
+}
+
+.equip-state.error {
+	border-color: #E2A917;
+}
+
+.idu-overView-chart{
+	padding-top: 15px;
+}
+
+.idu-select-div{
+	padding-left: 0px;
+}
+
+/*值班填报*/
+/* Fullcalendar */
+.fc .fc-widget-header {
+	background: #485b79;
+	border-color: #e6ecef;
+}
+
+.div-daily{
+	text-align: center;
+}
+
+.label-daily{
+	margin:5px;
+}
+
+/*日历*/
+.fc button {
+
+	/* text & cursor */
+	font-size: 1.2em; /* 字体加大 */
+}
+
+/*左侧菜单树宽度减小*/
+/* Layout Fixed - Content Body */
+html.fixed .content-body {
+	margin-left: 210px;
+}
+.sidebar-left {
+	width: 210px;
+}
+
+/* Layout Fixed - Page header */
+html.fixed .page-header {
+	left: 210px;
+}
+
+/*登录按钮*/
+.button-signin{
+  float: right;
+
+}
+
+.centerLabel {
+	margin-bottom: 0;
+  padding-top: 7px;
+	text-align:center;
+}
+
+.thin-padding {
+	 padding-left:5px;
+	 padding-right:5px;
+}
+
+.centerClass {
+	text-align:center;
+}
+
+/*
+值班填报
+*/
+.fc-unthemed .fc-divider,
+.fc-unthemed .fc-popover .fc-header {
+	background: #485b79;
+}
+html .fc {
+	font-size: 1em;
+}
+
+
+/*日历字体变大*/
+.fc table {
+	font-size: 1em;
+}
+
+/*单日日历弹出框X按钮*/
+.fc-unthemed .fc-popover .fc-header .fc-close {
+	color: #f9f3f3;
+}
+.fc-event {
+	font-size: 1.1em;
+}
+
+/*设置日历中内容可换行*/
+.fc-day-grid-event .fc-content {
+	white-space: normal;
+}
+
+.fc-day-grid-event {
+	margin: 5px 5px 0; /* spacing between events and edges */
+}
+
+th.idu_id, td.idu_id {
+	display: none;
+}
+
+th.net_id, td.net_id {
+	display: none;
+}
+
+
+th.netUpdate_id, td.netUpdate_id {
+	display: none;
+}
+
+
+th.bd_id, td.bd_id {
+	display: none;
+}
+
+th.sosList_id, td.sosList_id {
+	display: none;
+}
+
+th.equip_id, td.equip_id {
+	display: none;
+}
+
+th.shortMessage_id, td.shortMessage_id {
+	display: none;
+}
+
+th.offlineMessage_id, td.offlineMessage_id {
+	display: none;
+}
+
+.label_for_idu{
+	font-size: 15px;
+}
+
+th.idu_log_autoid, td.idu_log_autoid {
+	display: none;
+}
+
+th.applyDrillMessageid, td.applyDrillMessageid {
+	display: none;
+}
+
+th.deviceRespondId, td.deviceRespondId {
+	display: none;
+}
+
+th.authorityRespondId, td.authorityRespondId {
+	display: none;
+}
+
+/*外部接口配置*/
+th.restconfig_id, td.restconfig_id {
+	display: none;
+}
+
+th.restconfig_level, td.restconfig_level {
+	display: none;
+}
+
+/**
+下拉框
+
+*/
+.select2-container .select2-choice > .select2-chosen {
+    margin-right: 0px;
+
+}
+
+.select2-results li {
+	  width: 120%;
+    font-size: 14px;
+}
+
+.select2-results {
+	overflow-x: auto;
+}
+
+.select2-container .select2-choice {
+	padding-left:10px;
+	font-size: 10pt;
+}
+
+.select2-chosen,
+.select2-choice > span:first-child,
+.select2-container .select2-choices .select2-search-field input {
+	padding: 6px 2px;
+}
+
+.jclock_ntp {
+font-size: 18px;
+}
+
+.jclock_server {
+font-size: 18px;
+}
+
+.iduList-gap {
+	border-top: 1px solid #DADADA;
+	margin: 10px;
+}
+
+.current-user-license {
+	margin-top: 20px;
+	margin-bottom: 30px;
+}
+
+.restconfig-table {
+	padding-top: 10px;
+}
+
+.ztree li span.button.upload{
+	background: url(upload-nohover.png) no-repeat center center;
+	background-size:16px;
+	vertical-align:top;
+	margin-left: 2px;
+	margin-right: -3px;
+}
+
+.ztree li span.button.upload:hover {
+	background: url(upload-hover.jpg) no-repeat center center;
+	background-size:16px;
+	vertical-align:top;
+	margin-left: 2px;
+	margin-right: -3px;
+}
+
+/*只可点击输入的样式，用于设置为readonly但又可以通过点击其他插件输入的input*/
+/*
+无效，因为优先级的问题，后续执行的js会将css改回去
+.clickInput {
+	cursor:pointer;
+	background-color:#fff;
+}*/
+/*
+关于Font Awesome Icons
+菜单中可被使用的图标：
+server
+sitemap
+warning
+wifi
+connectdevelop
+bookmark
+bullhorn 小喇叭
+cloud-download
+cog cogs 设置
+cube cubes
+dashboard
+database
+desktop
+dot-circle-o
+exchange
+flag
+gear  gears
+globe
+hdd-o
+*/

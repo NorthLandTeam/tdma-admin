@@ -1,0 +1,83 @@
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<!--公共js文件-->
+<div th:fragment="commonJS">
+<!-- Vendor -->
+<script src="assets/vendor/jquery/jquery.js"></script>
+<script src="assets/vendor/jquery-browser-mobile/jquery.browser.mobile.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="assets/vendor/nanoscroller/nanoscroller.js"></script>
+<script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.js"></script>
+
+<script src="assets/vendor/jquery-autosize/jquery.autosize.js"></script>
+<script src="assets/vendor/bootstrap-fileupload/bootstrap-fileupload.min.js"></script>
+
+<!--引用中文语言包-->
+<script src="assets/vendor/bootstrap-datepicker/js/locales/bootstrap-datepicker.zh-CN.js"></script>
+<script src="assets/vendor/magnific-popup/magnific-popup.js"></script>
+<script src="assets/vendor/jquery-placeholder/jquery.placeholder.js"></script>
+
+<!-- Specific Page Vendor -->
+<script src="assets/vendor/select2/select2.js"></script>
+<script src="assets/vendor/jquery-datatables/media/js/jquery.dataTables.js"></script>
+<script src="assets/vendor/jquery-datatables-bs3/assets/js/datatables.js"></script>
+<script src="assets/vendor/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+<script src="assets/vendor/jquery-ui-touch-punch/jquery.ui.touch-punch.js"></script>
+<script src="assets/vendor/jquery-appear/jquery.appear.js"></script>
+<script src="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
+<script src="assets/vendor/jquery-easypiechart/jquery.easypiechart.js"></script>
+<script src="assets/vendor/flot/jquery.flot.js"></script>
+<script src="assets/vendor/flot-tooltip/jquery.flot.tooltip.js"></script>
+<script src="assets/vendor/flot/jquery.flot.pie.js"></script>
+<script src="assets/vendor/flot/jquery.flot.categories.js"></script>
+<script src="assets/vendor/flot/jquery.flot.resize.js"></script>
+<script src="assets/vendor/jquery-sparkline/jquery.sparkline.js"></script>
+<script src="assets/vendor/raphael/raphael.js"></script>
+<script src="assets/vendor/morris/morris.js"></script>
+<script src="assets/vendor/gauge/gauge.js"></script>
+<script src="assets/vendor/snap-svg/snap.svg.js"></script>
+<script src="assets/vendor/liquid-meter/liquid.meter.js"></script>
+<script src="assets/vendor/bootstrap-timepicker/js/bootstrap-timepicker.js"></script>
+
+<script src="assets/vendor/fullcalendar/2.9.1/lib/moment.min.js"></script>
+<script src="assets/vendor/fullcalendar/2.9.1/fullcalendar.js"></script>
+<script src="assets/vendor/jquery-validation/jquery.validate.js"></script>
+<script src="assets/vendor/bootstrap-wizard/jquery.bootstrap.wizard.js"></script>
+<script src="assets/vendor/pnotify/pnotify.custom.js"></script>
+
+<script src="assets/vendor/jquery-form/jquery.form.js"></script>
+
+<!--echarts-->
+<script src="assets/vendor/echarts/echarts.js"></script>
+
+<!--消息提示插件-->
+<script src="assets/vendor/toastr/toastr.js"></script>
+
+<!--zTree-->
+<script src="assets/vendor/zTree/js/jquery.ztree.all.js"></script>
+<script src="assets/vendor/zTree/js/jquery.ztree.exhide.js"></script>
+
+<!--根据json给表单赋值扩展-->
+<script src="assets/javascripts/extendForJquery.js"></script>
+
+<script type="text/javascript" th:inline="javascript">
+  var basePath = /*[[@{/}]]*/;
+</script>
+
+<!--定时器-->
+<script src="assets/javascripts/timer.js"></script>
+
+<!-- Theme Base, Components and Settings -->
+<script src="assets/javascripts/theme.js"></script>
+
+<!-- Theme Custom -->
+<script src="assets/javascripts/theme.custom.js"></script>
+
+<!-- Theme Initialization Files -->
+<script src="assets/javascripts/theme.init.js"></script>
+
+<!--验证工具类-->
+<script src="assets/javascripts/validateFunction.js"></script>
+</div>
+</body>

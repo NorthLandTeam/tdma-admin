@@ -14,4 +14,9 @@ export class AppController {
   async index(@Res() res){
     return res.render("index");
   }
+
+  @Get("/signin")
+  async signin(@Res() res){
+    return res.render("signin");
+  }
 }
