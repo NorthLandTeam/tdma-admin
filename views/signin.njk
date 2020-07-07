@@ -67,7 +67,7 @@
 		<!-- start: page -->
 		<section class="body-sign">
 			<div class="center-sign">
-				<a th:href="@{/login}" class="logo-login pull-left">
+				<a href="/" class="logo-login pull-left">
 					<h1 class="logo-login">VIP800A<span>人防卫星高清编解码器</span></h1>
 				</a>
 
@@ -76,7 +76,7 @@
 						<h2 class="title text-uppercase text-weight-bold m-none">管理系统</h2>
 					</div>
 					<div class="panel-body">
-						<form action="/checkLogin" method="post">
+						<form method="post" id="signinForm">
 							<div class="form-group mb-lg">
 								<label  class="login-font">用户名</label>
 								<div class="input-group input-group-icon">
@@ -111,8 +111,7 @@
 									</div>
 								</div>
 								<div class="col-sm-4 text-right">
-									<button type="submit" class="btn btn-primary hidden-xs button-signin">登录</button>
-									<button type="submit" class="btn btn-primary btn-block btn-lg visible-xs mt-lg">登录</button>
+									<button type="button" id="signinButton" class="btn btn-primary button-signin">登录</button>
 								</div>
 							</div>
 
@@ -120,7 +119,7 @@
 					</div>
 				</div>
 
-				<p class="text-center text-muted mt-md mb-md">&copy; Copyright 2020.</p>
+				<p class="text-center text-muted mt-md mb-md">&copy; Copyright 2020</p>
 			</div>
 		</section>
 		<!-- end: page -->
@@ -142,6 +141,21 @@
 
 		<!-- Theme Initialization Files -->
 		<script src="assets/javascripts/theme.init.js"></script>
+		<script type="text/javascript">
+			$("#signinButton").on('click',function(){
+					$.ajax({
+					type: "post",
+					url: "/signin",
+					dataType : "json",
+					data: $('#signinForm').serialize(),
+					success: function (data) {
+						console.log(data);
+			      alert(data.message);
+					}
+					});
+
+			});
+		</script>
 
 	</body>
 </html>
