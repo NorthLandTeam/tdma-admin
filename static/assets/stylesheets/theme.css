@@ -3019,7 +3019,7 @@ ul.nav-list.primary > li a {
 }
 
 .text-muted {
-	color: #ffffff !important;
+	color: #999999 !important;
 }
 
 html.dark .text-muted {

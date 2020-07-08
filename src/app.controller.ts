@@ -13,7 +13,7 @@ export class AppController {
 
   @Get("/home")
   async home(@Res() res){
-    return res.render("index");
+    return res.render("dashboard");
   }
 
   @Get()
@@ -29,8 +29,9 @@ export class AppController {
         });
     } else {
       res.json({
-            message: '登陆成功' 
+            message: '登陆成功'
         });
     }
   }
+
 }

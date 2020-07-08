@@ -192,59 +192,28 @@ Theme Version: 	1.4.1
 
 
 (function() {
-	//显示默认加载的idu
-	var ip=$("#idu_select_ip").val();
-	$.ajax({
-		type: "POST",
-		url: basePath+"getIduListForSelect",//url请求的地址
-		cache: false,  //禁用缓存
-		async: false,
-		data: [],
-		dataType: "json",
-		success: function (result) {
-			var idus = result;
-			console.log('idu列表数据生成成功-'+JSON.stringify(result));
-			$("#ipList").select2({
-			     data: idus,
-			     placeholder:ip,//默认文字提示
-			     language: "zh-CN",//汉化
-			     allowClear: false//允许清空
-			 })
-
-		}
-	});
-
-	loadTdmaPower();
-
-	$('#connectIDU').on('click', function( ev ) {
-		//阻止默认响应事件
-	  ev.preventDefault();
-		loadTdmaPower();
-	});
+	loadNetStatus();
 })();
 
-function loadTdmaPower() {
-		var select_ip = $("#ipList").val();
-		if(!select_ip){
-			select_ip = $("#idu_select_ip").val();
-		}
-		if(!select_ip){
-			return;
-		}
-		//加载TDMA功率参数图
-		var tdma_power = echarts.init(document.getElementById('TdmaPowerValueForDash'));
+function loadNetStatus() {
+		var time_array=["2020-7-7 18:30","2020-7-7 18:35", "2020-7-7 18:40", "2020-7-7 18:45", "2020-7-7 18:50"];    			//时间数组（用来盛放X轴坐标值）
+		var send_array=["156.1", "201.5", "98.2", "67.9", "176.3"];    			//网络发送速率数组
+		var receive_array=["23.9", "32.7", "81.2", "17.2", "56.3"]; 			//网络接收速率数组ß数组
+
+		//加载网络参数图
+		var tdma_power = echarts.init(document.getElementById('NetStatusForDash'));
 		var tdma_power_option = {
 		    tooltip : {
 		        trigger: 'axis'
 		    },
 		    legend: {
-		        data:['本站发射电平/dB/10','本站接收电平/dB/10','环路质量']
+		        data:['网络发送(kpbs)','网络接收(kpbs)']
 		    },
 		    calculable : true,
 		    xAxis : [
 		        {
 		            type : 'category',
-		            data : []
+		            data : time_array
 		        }
 		    ],
 		    yAxis : [
@@ -254,9 +223,9 @@ function loadTdmaPower() {
 		    ],
 		    series : [
 		        {
-		            name:'本站发射电平/dB/10',
-		            type:'bar',
-		            data:[],
+		            name:'网络发送(kpbs)',
+		            type:'line',
+		            data:send_array,
 		            markPoint : {
 		                data : [
 		                    {type : 'max', name: '最大值'},
@@ -270,25 +239,9 @@ function loadTdmaPower() {
 		            }
 		        },
 		        {
-		            name:'本站接收电平/dB/10',
-		            type:'bar',
-		            data:[],
-		            markPoint : {
-		                data : [
-		                    {type : 'max', name: '最大值'},
-		                    {type : 'min', name: '最小值'}
-		                ]
-		            },
-		            markLine : {
-		                data : [
-		                    {type : 'average', name: '平均值'}
-		                ]
-		            }
-		        },
-		        {
-		            name:'环路质量',
-		            type:'bar',
-		            data:[],
+		            name:'网络接收(kpbs)',
+		            type:'line',
+		            data:receive_array,
 		            markPoint : {
 		                data : [
 		                    {type : 'max', name: '最大值'},
@@ -304,125 +257,4 @@ function loadTdmaPower() {
 		    ]
 		};
 		tdma_power.setOption(tdma_power_option);
-
-
-		//数据加载完之前先显示一段简单的loading动画
-		tdma_power.showLoading();
-		//从后台获取TDMA功率参数信息
-		var time_array=[];    			//时间数组（用来盛放X轴坐标值）
-		var send_array=[];    			//本站发射电平数据数组
-		var receive_array=[]; 			//本站接收电平数据数组
-		var circularGrade_array = []; 	//环路质量数组
-		$.ajax({
-		  type: "POST",
-		  url: basePath+"getTDMAPowerInfoList",//url请求的地址
-		  async : true,            //异步请求（同步请求将会锁住浏览器，用户其他操作必须等待请求完成才可以执行）
-		  data : {
-		    "select_ip":select_ip
-		  },
-		  dataType : "json",        //返回数据形式为json
-		  success : function(result) {
-		     //请求成功时执行该函数内容，result即为服务器返回的json对象
-		     if (result) {
-		        console.log('数据加载成功-'+JSON.stringify(result));
-		        for(var i=0;i<result.length;i++){
-		          time_array.push(result[i].recordTime);    		//挨个取出类别并填入类别数组
-		        }
-
-		        for(var i=0;i<result.length;i++){
-		          send_array.push(result[i].bBandEsToNoOwn);    	//挨个取出类别并填入类别数组
-		        }
-
-		        for(var i=0;i<result.length;i++){
-		          receive_array.push(result[i].bBandEsToNoRef);    	//挨个取出类别并填入类别数组
-		        }
-
-		        for(var i=0;i<result.length;i++){
-		        	circularGrade_array.push(result[i].circularGrade);    //挨个取出类别并填入类别数组
-			    }
-		        
-		        tdma_power.hideLoading();    //隐藏加载动画
-		        tdma_power_option = {
-		          tooltip : {
-		              trigger: 'axis'
-		          },
-		          legend: {
-		              data:['本站发射电平/dB/10','本站接收电平/dB/10','环路质量']
-		          },
-		          calculable : true,
-		          xAxis : [
-		              {
-		                  type : 'category',
-		                  data : time_array
-		              }
-		          ],
-		          yAxis : [
-		              {
-		                  type : 'value'
-		              }
-		          ],
-		          series : [
-		              {
-		                  name:'本站发射电平/dB/10',
-		                  type:'line',
-		                  data:send_array,
-		                  markPoint : {
-		                      data : [
-		                          {type : 'max', name: '最大值'},
-		                          {type : 'min', name: '最小值'}
-		                      ]
-		                  },
-		                  markLine : {
-		                      data : [
-		                          {type : 'average', name: '平均值'}
-		                      ]
-		                  }
-		              },
-		              {
-		                  name:'本站接收电平/dB/10',
-		                  type:'line',
-		                  data:receive_array,
-		                  markPoint : {
-		                      data : [
-		                          {type : 'max', name: '最大值'},
-		                          {type : 'min', name: '最小值'}
-		                      ]
-		                  },
-		                  markLine : {
-		                      data : [
-		                          {type : 'average', name: '平均值'}
-		                      ]
-		                  }
-		              },
-		              {
-		                  name:'环路质量',
-		                  type:'line',
-		                  data:circularGrade_array,
-		                  markPoint : {
-		                      data : [
-		                          {type : 'max', name: '最大值'},
-		                          {type : 'min', name: '最小值'}
-		                      ]
-		                  },
-		                  markLine : {
-		                      data : [
-		                          {type : 'average', name: '平均值'}
-		                      ]
-		                  }
-		              }
-		          ]
-
-		        };
-		        // 使用刚指定的配置项和数据显示图表。
-		        tdma_power.setOption(tdma_power_option);
-
-		     }
-
-		  },
-		  error : function(errorMsg) {
-		    //请求失败时执行该函数
-		    toastr.warning("获取TDMA功率参数失败!");
-		    tdma_power.hideLoading();
-		  }
-		});
 	}

@@ -150,7 +150,8 @@
 					data: $('#signinForm').serialize(),
 					success: function (data) {
 						console.log(data);
-			      alert(data.message);
+			      //alert(data.message);
+						window.location.href = "/home";
 					}
 					});
 
